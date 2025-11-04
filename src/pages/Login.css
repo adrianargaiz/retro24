@@ -124,9 +124,9 @@
 }
 
 .login-input {
-  --background: rgba(44, 42, 43, 0.2); /* #2C2A2B con 20% opacity */
+  --background: transparent; /* Fondo transparente para controlar con ::part */
   --color: var(--retro24-text-primary);
-  --placeholder-color: rgba(44, 42, 43, 0.5);
+  --placeholder-color: rgba(44, 42, 43, 0.6);
   --placeholder-opacity: 1;
   --padding-start: 20px;
   --padding-end: 20px;
@@ -143,10 +143,11 @@
 }
 
 .login-input::part(native) {
-  background: rgba(44, 42, 43, 0.2);
-  border-radius: 16px;
-  height: 59px;
-  padding: 0 20px;
+  background: rgba(44, 42, 43, 0.2) !important; /* #2C2A2B con 20% opacity */
+  border: none !important;
+  border-radius: 16px !important;
+  height: 59px !important;
+  padding: 0 20px !important;
 }
 
 /* Focus state */
