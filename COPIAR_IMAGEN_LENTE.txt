@@ -1,0 +1,85 @@
+==============================================================
+  RETRO24 - INSTRUCCIONES PARA COPIAR IMAGEN DEL LENTE
+==============================================================
+
+⚠️ ACCIÓN REQUERIDA: Debes copiar manualmente el archivo lente.png
+
+--------------------------------------------------------------
+ORIGEN (archivo que tienes):
+--------------------------------------------------------------
+C:\Users\Usuario\Downloads\lente.png
+
+--------------------------------------------------------------
+DESTINO (donde debe estar):
+--------------------------------------------------------------
+C:\Proyectos\photoparty\retro24\src\assets\images\lente.png
+
+--------------------------------------------------------------
+OPCIÓN 1: Copiar usando Windows Explorer (GUI)
+--------------------------------------------------------------
+1. Abre el Explorador de Archivos de Windows
+2. Navega a: C:\Users\Usuario\Downloads\
+3. Busca el archivo: lente.png
+4. Haz clic derecho → Copiar (o Ctrl+C)
+5. Navega a: C:\Proyectos\photoparty\retro24\src\assets\images\
+6. Haz clic derecho → Pegar (o Ctrl+V)
+
+--------------------------------------------------------------
+OPCIÓN 2: Copiar usando Command Prompt (CMD)
+--------------------------------------------------------------
+Abre CMD y ejecuta:
+
+copy "C:\Users\Usuario\Downloads\lente.png" "C:\Proyectos\photoparty\retro24\src\assets\images\lente.png"
+
+--------------------------------------------------------------
+OPCIÓN 3: Copiar usando PowerShell
+--------------------------------------------------------------
+Abre PowerShell y ejecuta:
+
+Copy-Item "C:\Users\Usuario\Downloads\lente.png" -Destination "C:\Proyectos\photoparty\retro24\src\assets\images\lente.png"
+
+--------------------------------------------------------------
+OPCIÓN 4: Copiar usando Git Bash / MSYS
+--------------------------------------------------------------
+Abre Git Bash y ejecuta:
+
+cp /c/Users/Usuario/Downloads/lente.png /c/Proyectos/photoparty/retro24/src/assets/images/lente.png
+
+--------------------------------------------------------------
+VERIFICAR QUE SE COPIÓ CORRECTAMENTE
+--------------------------------------------------------------
+Ejecuta en CMD o PowerShell:
+
+dir "C:\Proyectos\photoparty\retro24\src\assets\images\lente.png"
+
+O en Git Bash:
+
+ls -lh /c/Proyectos/photoparty/retro24/src/assets/images/lente.png
+
+Deberías ver el archivo con un tamaño aproximado de 100-500 KB
+
+--------------------------------------------------------------
+DESPUÉS DE COPIAR LA IMAGEN
+--------------------------------------------------------------
+1. Navega al proyecto:
+   cd C:\Proyectos\photoparty\retro24
+
+2. Inicia el servidor de desarrollo:
+   ionic serve
+
+3. Abre en el navegador:
+   http://localhost:8100
+
+4. Deberías ver la pantalla Welcome con el lente de cámara visible
+
+--------------------------------------------------------------
+SI LA IMAGEN NO APARECE DESPUÉS DE COPIARLA
+--------------------------------------------------------------
+1. Verifica el nombre del archivo (debe ser exactamente "lente.png" en minúsculas)
+2. Verifica la ruta completa
+3. Reinicia el servidor Ionic (Ctrl+C y luego ionic serve)
+4. Limpia el cache del navegador (Ctrl+Shift+R)
+
+==============================================================
+¿Todo listo? Ejecuta: ionic serve
+==============================================================

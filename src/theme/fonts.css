@@ -1,0 +1,16 @@
+/**
+ * RETRO24 - Fonts Configuration
+ * Importación y configuración de fuentes Google Fonts
+ */
+
+/* Importar Inter desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Aplicar Inter como fuente por defecto en toda la app */
+* {
+  font-family: var(--retro24-font-family);
+}
+
+body {
+  font-family: var(--retro24-font-family);
+}
