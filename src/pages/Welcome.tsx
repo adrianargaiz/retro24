@@ -9,6 +9,7 @@ import React from 'react';
 import { IonPage, IonContent, IonButton } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import './Welcome.css';
+import lenteImage from '../assets/images/lente.png';
 
 const Welcome: React.FC = () => {
   const history = useHistory();
@@ -45,7 +46,7 @@ const Welcome: React.FC = () => {
             {/* Camera Lens Image */}
             <div className="welcome-lens-container">
               <img
-                src="/src/assets/images/lente.png"
+                src={lenteImage}
                 alt="Camera Lens"
                 className="welcome-lens"
               />
