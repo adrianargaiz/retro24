@@ -1,0 +1,359 @@
+/**
+ * RETRO24 - Login Screen Styles
+ * Estilos pixel-perfect basados en las especificaciones del diseño
+ */
+
+/* ========================================
+   LOGIN CONTENT
+   ======================================== */
+
+.login-content {
+  --background: var(--retro24-bg-primary);
+}
+
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--retro24-bg-primary);
+  overflow: hidden;
+}
+
+/* ========================================
+   RAINBOW STRIPES BACKGROUND - 45% OPACITY
+   ======================================== */
+
+.login-rainbow-stripes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--retro24-z-base);
+  opacity: 0.45; /* 45% opacity según especificación */
+}
+
+.login-stripe {
+  width: var(--retro24-stripe-width);
+  height: var(--retro24-stripe-height);
+  flex-shrink: 0;
+}
+
+.login-stripe-pink {
+  background-color: var(--retro24-rainbow-pink);
+}
+
+.login-stripe-red {
+  background-color: var(--retro24-rainbow-red);
+}
+
+.login-stripe-orange {
+  background-color: var(--retro24-rainbow-orange);
+}
+
+.login-stripe-yellow {
+  background-color: var(--retro24-rainbow-yellow);
+}
+
+.login-stripe-green {
+  background-color: var(--retro24-rainbow-green);
+}
+
+.login-stripe-blue {
+  background-color: var(--retro24-rainbow-blue);
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.login-main {
+  position: relative;
+  z-index: calc(var(--retro24-z-base) + 10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px;
+  padding-left: var(--retro24-space-lg);
+  padding-right: var(--retro24-space-lg);
+  padding-bottom: var(--retro24-space-3xl);
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
+.login-header {
+  text-align: center;
+  margin-bottom: var(--retro24-space-5xl);
+}
+
+.login-title {
+  font-family: var(--retro24-font-family);
+  font-size: 36px; /* Inter Semibold 36px según especificación */
+  font-weight: var(--retro24-font-weight-semibold);
+  line-height: var(--retro24-line-height-tight);
+  color: var(--retro24-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   FORM SECTION
+   ======================================== */
+
+.login-form {
+  width: 100%;
+  max-width: 339px; /* Ancho exacto de inputs y botón */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--retro24-space-md); /* Mismo espaciado entre elementos */
+  margin-bottom: auto; /* Empuja el register link al fondo */
+}
+
+/* ========================================
+   INPUT FIELDS - 339x59px, #2C2A2B 20% opacity, radius 16px
+   ======================================== */
+
+.login-input-wrapper {
+  width: 100%;
+}
+
+.login-input {
+  --background: rgba(44, 42, 43, 0.2); /* #2C2A2B con 20% opacity */
+  --color: var(--retro24-text-primary);
+  --placeholder-color: rgba(44, 42, 43, 0.5);
+  --placeholder-opacity: 1;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 0;
+  --padding-bottom: 0;
+
+  width: 339px; /* Ancho exacto según especificación */
+  height: 59px; /* Alto exacto según especificación */
+  border-radius: 16px; /* Radio exacto según especificación */
+  font-family: var(--retro24-font-family);
+  font-size: var(--retro24-font-size-body);
+  font-weight: var(--retro24-font-weight-regular);
+  margin: 0;
+}
+
+.login-input::part(native) {
+  background: rgba(44, 42, 43, 0.2);
+  border-radius: 16px;
+  height: 59px;
+  padding: 0 20px;
+}
+
+/* Focus state */
+.login-input.ion-focused {
+  --background: rgba(44, 42, 43, 0.25);
+}
+
+.login-input.ion-focused::part(native) {
+  background: rgba(44, 42, 43, 0.25);
+  outline: 2px solid rgba(44, 42, 43, 0.3);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   LOGIN BUTTON - 339x59px, #2C2A2B 100%, radius 16px
+   ======================================== */
+
+.login-button-wrapper {
+  width: 100%;
+}
+
+.login-button {
+  --background: var(--retro24-button-bg); /* #2C2A2B sólido */
+  --background-hover: #3A3839;
+  --background-activated: #1F1D1E;
+  --color: var(--retro24-button-text);
+  --border-radius: 16px; /* Radio exacto según especificación */
+
+  width: 339px; /* Ancho exacto según especificación */
+  height: 59px; /* Alto exacto según especificación */
+  font-family: var(--retro24-font-family);
+  font-size: var(--retro24-font-size-button);
+  font-weight: var(--retro24-font-weight-semibold);
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+
+  /* Transición suave para hover */
+  transition: all var(--retro24-transition-base);
+}
+
+.login-button::part(native) {
+  padding: 0 var(--retro24-space-xl);
+  border-radius: 16px;
+}
+
+/* ========================================
+   FORGOT PASSWORD LINK
+   ======================================== */
+
+.login-forgot {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--retro24-space-sm);
+}
+
+.login-forgot-link {
+  background: none;
+  border: none;
+  color: var(--retro24-text-primary);
+  font-family: var(--retro24-font-family);
+  font-size: 14px;
+  font-weight: var(--retro24-font-weight-regular);
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--retro24-space-sm);
+  transition: opacity var(--retro24-transition-fast);
+}
+
+.login-forgot-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.login-forgot-link:focus {
+  outline: 2px solid var(--retro24-text-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========================================
+   REGISTER LINK - Bottom
+   ======================================== */
+
+.login-register {
+  width: 100%;
+  text-align: center;
+  padding-bottom: var(--retro24-space-2xl);
+}
+
+.login-register-link {
+  background: none;
+  border: none;
+  color: var(--retro24-text-primary);
+  font-family: var(--retro24-font-family);
+  font-size: var(--retro24-font-size-body);
+  font-weight: var(--retro24-font-weight-regular);
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--retro24-space-sm);
+  transition: opacity var(--retro24-transition-fast);
+}
+
+.login-register-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.login-register-link:focus {
+  outline: 2px solid var(--retro24-text-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Para pantallas pequeñas (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .login-title {
+    font-size: 32px;
+  }
+
+  .login-input,
+  .login-button {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .login-rainbow-stripes {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* Para pantallas muy pequeñas (iPhone 5/SE) */
+@media (max-width: 320px) {
+  .login-title {
+    font-size: 28px;
+  }
+
+  .login-input,
+  .login-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .login-main {
+    padding: var(--retro24-space-xl) var(--retro24-space-md);
+  }
+
+  .login-rainbow-stripes {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+/* Para pantallas grandes (iPhone Plus, Max) */
+@media (min-width: 429px) {
+  .login-title {
+    font-size: 40px;
+  }
+}
+
+/* Para dispositivos en landscape */
+@media (orientation: landscape) and (max-height: 500px) {
+  .login-main {
+    padding: var(--retro24-space-lg) var(--retro24-space-md);
+  }
+
+  .login-title {
+    font-size: 28px;
+  }
+
+  .login-header {
+    margin-bottom: var(--retro24-space-xl);
+  }
+
+  .login-rainbow-stripes {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  .login-stripe {
+    height: 600px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Reducir animaciones para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  .login-button,
+  .login-forgot-link,
+  .login-register-link {
+    transition: none;
+  }
+}
+
+/* Alto contraste para mejor legibilidad */
+@media (prefers-contrast: high) {
+  .login-input {
+    --background: rgba(44, 42, 43, 0.3);
+  }
+
+  .login-input::part(native) {
+    background: rgba(44, 42, 43, 0.3);
+    border: 1px solid var(--retro24-text-primary);
+  }
+}

@@ -15,9 +15,8 @@ const Welcome: React.FC = () => {
   const history = useHistory();
 
   const handleStart = () => {
-    // Navegación a la siguiente pantalla (por implementar)
-    console.log('Navegando a la siguiente pantalla...');
-    // history.push('/home');
+    // Navegación a la pantalla de Login
+    history.push('/login');
   };
 
   return (
