@@ -86,7 +86,7 @@
 .welcome-header {
   text-align: center;
   margin-top: 0;
-  margin-bottom: var(--retro24-space-3xl);
+  margin-bottom: var(--retro24-space-lg);
 }
 
 .welcome-title {
@@ -108,14 +108,13 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  margin-bottom: var(--retro24-space-xl);
+  margin-bottom: var(--retro24-space-lg);
 }
 
 .welcome-lens {
-  width: var(--retro24-lens-size);
-  height: var(--retro24-lens-size);
+  width: 220px;
+  height: 220px;
   max-width: 100%;
-  height: auto;
   object-fit: contain;
   /* Sombra sutil para dar profundidad */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
@@ -200,8 +199,8 @@
   }
 
   .welcome-lens {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
 
   .rainbow-stripes {
@@ -220,8 +219,8 @@
   }
 
   .welcome-lens {
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
   }
 
   .welcome-main {
@@ -236,8 +235,8 @@
 /* Para pantallas medianas (iPhone 12, 13, 14) */
 @media (min-width: 376px) and (max-width: 428px) {
   .welcome-lens {
-    width: var(--retro24-lens-size);
-    height: var(--retro24-lens-size);
+    width: 220px;
+    height: 220px;
   }
 }
 
@@ -252,8 +251,8 @@
   }
 
   .welcome-lens {
-    width: 400px;
-    height: 400px;
+    width: 260px;
+    height: 260px;
   }
 }
 
@@ -272,8 +271,8 @@
   }
 
   .welcome-lens {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
   }
 
   .rainbow-stripes {
