@@ -18,7 +18,8 @@ const Login: React.FC = () => {
   const handleLogin = () => {
     // Lógica de login (por implementar)
     console.log('Login con:', email, password);
-    // history.push('/home');
+    // Navigate to home page after login
+    history.push('/home');
   };
 
   const handleForgotPassword = () => {

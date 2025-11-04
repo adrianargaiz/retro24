@@ -1,0 +1,417 @@
+/**
+ * HOME PAGE - Retro24
+ * Main page with roll counter and navigation
+ */
+
+/* ========================================
+   PAGE STRUCTURE
+   ======================================== */
+
+.home-content {
+  --background: var(--retro24-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  z-index: var(--retro24-z-base);
+}
+
+/* ========================================
+   RAINBOW STRIPES
+   ======================================== */
+
+.rainbow-stripes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stripe {
+  flex: 1;
+  width: var(--retro24-stripe-width);
+  height: 100%;
+  opacity: 0.3;
+}
+
+.stripe-pink {
+  background-color: var(--retro24-rainbow-pink);
+}
+
+.stripe-red {
+  background-color: var(--retro24-rainbow-red);
+}
+
+.stripe-orange {
+  background-color: var(--retro24-rainbow-orange);
+}
+
+.stripe-yellow {
+  background-color: var(--retro24-rainbow-yellow);
+}
+
+.stripe-green {
+  background-color: var(--retro24-rainbow-green);
+}
+
+.stripe-blue {
+  background-color: var(--retro24-rainbow-blue);
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--retro24-space-lg) var(--retro24-space-lg) 0;
+  margin-top: var(--retro24-space-md);
+  position: relative;
+  z-index: var(--retro24-z-base);
+}
+
+.date-text {
+  font-family: var(--retro24-font-family);
+  font-size: 24px;
+  font-weight: var(--retro24-font-weight-semibold);
+  color: var(--retro24-text-primary);
+  line-height: var(--retro24-line-height-tight);
+}
+
+.user-button {
+  background: transparent;
+  border: none;
+  padding: var(--retro24-space-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: opacity var(--retro24-transition-fast);
+}
+
+.user-button:hover {
+  opacity: 0.7;
+}
+
+.user-button:active {
+  opacity: 0.5;
+}
+
+.user-button:focus-visible {
+  outline: 3px solid var(--retro24-text-primary);
+  outline-offset: 2px;
+  border-radius: var(--retro24-radius-md);
+}
+
+/* ========================================
+   CENTER CONTENT - RING COUNTER
+   ======================================== */
+
+.home-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--retro24-space-lg);
+  position: relative;
+  z-index: var(--retro24-z-base);
+  margin-top: -40px; /* Adjust vertical centering */
+}
+
+.roll-counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--retro24-space-3xl);
+}
+
+.roll-ring {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 8px solid rgba(44, 42, 43, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.roll-counter {
+  text-align: center;
+}
+
+.counter-number {
+  font-family: var(--retro24-font-family);
+  font-size: 40px;
+  font-weight: var(--retro24-font-weight-semibold);
+  color: var(--retro24-text-primary);
+  line-height: var(--retro24-line-height-tight);
+  margin-bottom: var(--retro24-space-xs);
+}
+
+.counter-subtitle {
+  font-family: var(--retro24-font-family);
+  font-size: 13px;
+  font-weight: var(--retro24-font-weight-semibold);
+  color: var(--retro24-text-primary);
+  line-height: var(--retro24-line-height-normal);
+}
+
+/* ========================================
+   MESSAGE SECTION
+   ======================================== */
+
+.message-container {
+  text-align: center;
+  margin-bottom: var(--retro24-space-2xl);
+}
+
+.message-title {
+  font-family: var(--retro24-font-family);
+  font-size: 20px;
+  font-weight: var(--retro24-font-weight-semibold);
+  color: var(--retro24-text-primary);
+  line-height: var(--retro24-line-height-tight);
+  margin: 0 0 var(--retro24-space-xs) 0;
+}
+
+.message-subtitle {
+  font-family: var(--retro24-font-family);
+  font-size: 16px;
+  font-weight: var(--retro24-font-weight-regular);
+  color: var(--retro24-text-primary);
+  line-height: var(--retro24-line-height-normal);
+  margin: 0;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--retro24-space-md);
+  padding: 0 var(--retro24-space-lg);
+  margin-bottom: var(--retro24-space-3xl);
+  position: relative;
+  z-index: var(--retro24-z-base);
+}
+
+/* Main Button - Create New Roll */
+.btn-create-roll {
+  width: 279px;
+  height: 71px;
+  border-radius: 16px;
+  background-color: var(--retro24-button-bg);
+  color: var(--retro24-button-text);
+  font-family: var(--retro24-font-family);
+  font-size: var(--retro24-font-size-button);
+  font-weight: var(--retro24-font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  transition: all var(--retro24-transition-base);
+  box-shadow: var(--retro24-shadow-md);
+}
+
+.btn-create-roll:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--retro24-shadow-lg);
+}
+
+.btn-create-roll:active {
+  transform: translateY(0);
+  box-shadow: var(--retro24-shadow-sm);
+}
+
+.btn-create-roll:focus-visible {
+  outline: 3px solid var(--retro24-text-primary);
+  outline-offset: 4px;
+}
+
+/* Secondary Button - See Past Rolls */
+.btn-past-rolls {
+  width: 142px;
+  height: 27px;
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--retro24-text-primary);
+  font-family: var(--retro24-font-family);
+  font-size: 14px;
+  font-weight: var(--retro24-font-weight-medium);
+  border: 1.5px solid var(--retro24-text-primary);
+  cursor: pointer;
+  transition: all var(--retro24-transition-fast);
+}
+
+.btn-past-rolls:hover {
+  background-color: var(--retro24-text-primary);
+  color: var(--retro24-button-text);
+}
+
+.btn-past-rolls:active {
+  opacity: 0.8;
+}
+
+.btn-past-rolls:focus-visible {
+  outline: 3px solid var(--retro24-text-primary);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   BOTTOM NAVIGATION
+   ======================================== */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: var(--retro24-bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: var(--retro24-space-md) var(--retro24-space-2xl);
+  border-top: 1px solid rgba(44, 42, 43, 0.1);
+  z-index: var(--retro24-z-fixed);
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  padding: var(--retro24-space-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: var(--retro24-radius-md);
+  transition: all var(--retro24-transition-fast);
+  position: relative;
+}
+
+.nav-button:hover {
+  background-color: rgba(44, 42, 43, 0.05);
+}
+
+.nav-button:active {
+  background-color: rgba(44, 42, 43, 0.1);
+  transform: scale(0.95);
+}
+
+.nav-button:focus-visible {
+  outline: 3px solid var(--retro24-text-primary);
+  outline-offset: 2px;
+}
+
+.nav-button.active {
+  background-color: rgba(44, 42, 43, 0.08);
+}
+
+.nav-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 3px;
+  background-color: var(--retro24-text-primary);
+  border-radius: 2px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* For smaller devices */
+@media (max-width: 375px) {
+  .home-header {
+    padding: var(--retro24-space-md) var(--retro24-space-md) 0;
+  }
+
+  .date-text {
+    font-size: 22px;
+  }
+
+  .roll-ring {
+    width: 240px;
+    height: 240px;
+    border-width: 6px;
+  }
+
+  .counter-number {
+    font-size: 36px;
+  }
+
+  .btn-create-roll {
+    width: 260px;
+    height: 66px;
+  }
+}
+
+/* For larger devices */
+@media (min-width: 414px) {
+  .roll-ring {
+    width: 300px;
+    height: 300px;
+  }
+
+  .counter-number {
+    font-size: 44px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .btn-create-roll,
+  .btn-past-rolls,
+  .nav-button,
+  .user-button {
+    transition: none;
+  }
+
+  .btn-create-roll:hover,
+  .nav-button:active {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .roll-ring {
+    border-width: 10px;
+    border-color: var(--retro24-text-primary);
+  }
+
+  .btn-past-rolls {
+    border-width: 2px;
+  }
+
+  .bottom-nav {
+    border-top-width: 2px;
+  }
+}
