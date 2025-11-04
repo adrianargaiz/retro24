@@ -75,7 +75,9 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  padding: var(--retro24-space-4xl) var(--retro24-space-lg);
+  padding-top: 60px; /* Posicionamiento preciso para iPhone 15 Pro */
+  padding-left: var(--retro24-space-lg);
+  padding-right: var(--retro24-space-lg);
   padding-bottom: var(--retro24-space-5xl);
 }
 
@@ -86,7 +88,7 @@
 .welcome-header {
   text-align: center;
   margin-top: 0;
-  margin-bottom: var(--retro24-space-lg);
+  margin-bottom: 54px; /* Espacio calculado para posicionar lente en y:284px */
 }
 
 .welcome-title {
