@@ -20,10 +20,11 @@ const AppleIcon: React.FC<AppleIconProps> = ({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 32 32"
+      viewBox="0 0 380 60"
       width={width}
       height={height}
       className={className}
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <path id="A" d="M0 0h708.7v870.3H0z"/>

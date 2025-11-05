@@ -121,6 +121,11 @@
 
 .login-input-wrapper {
   width: 100%;
+  margin-bottom: 16px; /* Explicit spacing between input fields */
+}
+
+.login-input-wrapper:last-of-type {
+  margin-bottom: 0; /* Remove margin from last input wrapper */
 }
 
 .login-input {
@@ -149,6 +154,8 @@
   height: 59px !important;
   padding: 0 20px !important;
   color: var(--retro24-text-primary) !important;
+  box-sizing: border-box !important;
+  display: block !important;
 }
 
 /* Focus state */
