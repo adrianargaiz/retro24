@@ -24,48 +24,48 @@
 }
 
 /* ========================================
-   RAINBOW STRIPES
+   RAINBOW STRIPES - Horizontales en la parte superior
    ======================================== */
 
-.rainbow-stripes {
+.home-rainbow-stripes {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 84px; /* 6 rayas × 14px = 84px */
   display: flex;
+  flex-direction: column; /* Horizontal, apiladas verticalmente */
   z-index: 0;
   pointer-events: none;
 }
 
-.stripe {
-  flex: 1;
-  width: var(--retro24-stripe-width);
-  height: 100%;
-  opacity: 0.3;
+.home-stripe {
+  width: 100%;
+  height: 14px; /* Cada raya 14px de alto */
+  opacity: 0.45; /* 45% opacidad según especificación */
 }
 
-.stripe-pink {
+.home-stripe-pink {
   background-color: var(--retro24-rainbow-pink);
 }
 
-.stripe-red {
+.home-stripe-red {
   background-color: var(--retro24-rainbow-red);
 }
 
-.stripe-orange {
+.home-stripe-orange {
   background-color: var(--retro24-rainbow-orange);
 }
 
-.stripe-yellow {
+.home-stripe-yellow {
   background-color: var(--retro24-rainbow-yellow);
 }
 
-.stripe-green {
+.home-stripe-green {
   background-color: var(--retro24-rainbow-green);
 }
 
-.stripe-blue {
+.home-stripe-blue {
   background-color: var(--retro24-rainbow-blue);
 }
 
@@ -129,6 +129,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--retro24-space-lg);
+  padding-bottom: 0; /* Sin padding inferior para que los botones estén más cerca */
   position: relative;
   z-index: var(--retro24-z-base);
   margin-top: -40px; /* Adjust vertical centering */
@@ -179,7 +180,7 @@
 
 .message-container {
   text-align: center;
-  margin-bottom: var(--retro24-space-2xl);
+  margin-bottom: var(--retro24-space-lg); /* Reducido para acercar los botones */
 }
 
 .message-title {
@@ -209,8 +210,8 @@
   flex-direction: column;
   align-items: center;
   gap: var(--retro24-space-md);
-  padding: 0 var(--retro24-space-lg);
-  margin-bottom: var(--retro24-space-3xl);
+  padding: 0;
+  margin-bottom: 0; /* Sin margen inferior ya que está dentro de home-center */
   position: relative;
   z-index: var(--retro24-z-base);
 }

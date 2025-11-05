@@ -51,13 +51,13 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent fullscreen className="home-content">
         {/* Rainbow Stripes Background */}
-        <div className="rainbow-stripes">
-          <div className="stripe stripe-pink"></div>
-          <div className="stripe stripe-red"></div>
-          <div className="stripe stripe-orange"></div>
-          <div className="stripe stripe-yellow"></div>
-          <div className="stripe stripe-green"></div>
-          <div className="stripe stripe-blue"></div>
+        <div className="home-rainbow-stripes">
+          <div className="home-stripe home-stripe-pink"></div>
+          <div className="home-stripe home-stripe-red"></div>
+          <div className="home-stripe home-stripe-orange"></div>
+          <div className="home-stripe home-stripe-yellow"></div>
+          <div className="home-stripe home-stripe-green"></div>
+          <div className="home-stripe home-stripe-blue"></div>
         </div>
 
         {/* Main Container */}
@@ -89,25 +89,25 @@ const Home: React.FC = () => {
               <h1 className="message-title">You still have rolls left</h1>
               <p className="message-subtitle">Let's create new memories!</p>
             </div>
-          </div>
 
-          {/* Buttons */}
-          <div className="home-actions">
-            <button
-              className="btn-primary btn-create-roll"
-              onClick={handleCreateNewRoll}
-              aria-label="Create new roll"
-            >
-              Create new roll
-            </button>
+            {/* Buttons */}
+            <div className="home-actions">
+              <button
+                className="btn-primary btn-create-roll"
+                onClick={handleCreateNewRoll}
+                aria-label="Create new roll"
+              >
+                Create new roll
+              </button>
 
-            <button
-              className="btn-secondary btn-past-rolls"
-              onClick={handleSeePastRolls}
-              aria-label="See past rolls"
-            >
-              See past rolls
-            </button>
+              <button
+                className="btn-secondary btn-past-rolls"
+                onClick={handleSeePastRolls}
+                aria-label="See past rolls"
+              >
+                See past rolls
+              </button>
+            </div>
           </div>
 
           {/* Bottom Navigation */}
