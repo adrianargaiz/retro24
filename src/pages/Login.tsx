@@ -8,6 +8,7 @@
 import React, { useState } from 'react';
 import { IonPage, IonContent, IonInput, IonButton } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
+import { GoogleIcon, AppleIcon } from '../components/icons';
 import './Login.css';
 
 const Login: React.FC = () => {
@@ -30,6 +31,16 @@ const Login: React.FC = () => {
   const handleRegister = () => {
     console.log('Register clicked');
     history.push('/register');
+  };
+
+  const handleGoogleLogin = () => {
+    console.log('Google login clicked');
+    // TODO: Implement Google OAuth login
+  };
+
+  const handleAppleLogin = () => {
+    console.log('Apple login clicked');
+    // TODO: Implement Apple login
   };
 
   return (
@@ -91,6 +102,31 @@ const Login: React.FC = () => {
                 >
                   Login
                 </IonButton>
+              </div>
+
+              {/* Social Login Divider */}
+              <div className="login-divider">
+                <span className="login-divider-text">or</span>
+              </div>
+
+              {/* Social Login Icons */}
+              <div className="login-social">
+                <button
+                  className="login-social-button"
+                  onClick={handleGoogleLogin}
+                  type="button"
+                  aria-label="Login with Google"
+                >
+                  <GoogleIcon width={36} height={36} />
+                </button>
+                <button
+                  className="login-social-button"
+                  onClick={handleAppleLogin}
+                  type="button"
+                  aria-label="Login with Apple"
+                >
+                  <AppleIcon width={38} height={38} />
+                </button>
               </div>
 
               {/* Forgot Password Link */}

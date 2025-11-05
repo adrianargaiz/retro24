@@ -42,7 +42,7 @@
 .home-stripe {
   width: 100%;
   height: 14px; /* Cada raya 14px de alto */
-  opacity: 0.45; /* 45% opacidad según especificación */
+  opacity: 0.7; /* 70% opacidad según especificación */
 }
 
 .home-stripe-pink {
