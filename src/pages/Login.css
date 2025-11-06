@@ -129,7 +129,7 @@
 }
 
 .login-input {
-  --background: transparent; /* Fondo transparente para controlar con ::part */
+  --background: rgba(44, 42, 43, 0.2); /* Fixed: Set actual background color instead of transparent */
   --color: var(--retro24-text-primary);
   --placeholder-color: rgba(44, 42, 43, 0.6);
   --placeholder-opacity: 1;
@@ -147,26 +147,11 @@
   margin: 0;
 }
 
-.login-input::part(native) {
-  background: rgba(44, 42, 43, 0.2) !important; /* #2C2A2B con 20% opacity */
-  border: none !important;
-  border-radius: 16px !important;
-  height: 59px !important;
-  padding: 0 20px !important;
-  color: var(--retro24-text-primary) !important;
-  box-sizing: border-box !important;
-  display: block !important;
-}
+/* Removed ::part(native) rules - Ionic CSS variables penetrate Shadow DOM automatically */
 
 /* Focus state */
 .login-input.ion-focused {
   --background: rgba(44, 42, 43, 0.25);
-}
-
-.login-input.ion-focused::part(native) {
-  background: rgba(44, 42, 43, 0.25);
-  outline: 2px solid rgba(44, 42, 43, 0.3);
-  outline-offset: 2px;
 }
 
 /* ========================================
