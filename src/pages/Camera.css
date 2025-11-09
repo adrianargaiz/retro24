@@ -1,0 +1,336 @@
+/**
+ * RETRO24 - Camera Page Styles
+ * Full-screen camera interface with native controls overlay
+ */
+
+/* ========================================
+   CAMERA CONTENT
+   ======================================== */
+
+.camera-content {
+  --background: #000000;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+/* ========================================
+   CAMERA VIEW - Full Screen
+   ======================================== */
+
+.camera-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  z-index: var(--retro24-z-base);
+}
+
+.camera-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.camera-placeholder-text {
+  font-family: var(--retro24-font-family);
+  font-size: 16px;
+  font-weight: var(--retro24-font-weight-regular);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: var(--retro24-space-lg);
+}
+
+.camera-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ========================================
+   TOP NAVIGATION BAR - Overlay
+   ======================================== */
+
+.camera-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--retro24-space-lg);
+  padding-top: max(var(--retro24-space-lg), env(safe-area-inset-top));
+  z-index: calc(var(--retro24-z-base) + 10);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* ========================================
+   NAVIGATION BUTTONS - Back & Flash
+   ======================================== */
+
+.camera-nav-button {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: var(--retro24-radius-full);
+  padding: var(--retro24-space-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  transition: all var(--retro24-transition-fast);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.camera-nav-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.camera-nav-button:active {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(0.95);
+}
+
+.camera-nav-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+/* Back Button */
+.camera-back-button {
+  /* Positioned on the left by flexbox */
+}
+
+/* Flash Button - State-based Styling */
+.camera-flash-button {
+  /* Positioned on the right by flexbox */
+}
+
+.camera-flash-button.flash-off {
+  /* White icon when flash is off */
+}
+
+.camera-flash-button.flash-on {
+  background: rgba(254, 178, 0, 0.2);
+  /* Yellow/amber background when flash is on */
+}
+
+.camera-flash-button.flash-on:hover {
+  background: rgba(254, 178, 0, 0.3);
+}
+
+/* ========================================
+   BOTTOM CAPTURE BUTTON
+   ======================================== */
+
+.camera-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--retro24-space-3xl);
+  padding-bottom: max(var(--retro24-space-3xl), env(safe-area-inset-bottom, var(--retro24-space-3xl)));
+  z-index: calc(var(--retro24-z-base) + 10);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.camera-capture-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 4px solid #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--retro24-transition-fast);
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.camera-capture-button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.camera-capture-button:active {
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.camera-capture-button:focus-visible {
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+}
+
+.camera-capture-inner {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  transition: all var(--retro24-transition-fast);
+}
+
+.camera-capture-button:active .camera-capture-inner {
+  transform: scale(0.85);
+}
+
+/* ========================================
+   CAMERA VIEWFINDER - 4:3 Aspect Ratio Guide
+   ======================================== */
+
+/* Optional: Add a 4:3 aspect ratio guide overlay */
+.camera-aspect-guide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 100vh;
+  aspect-ratio: 4 / 3;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  z-index: calc(var(--retro24-z-base) + 5);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* For smaller devices */
+@media (max-width: 375px) {
+  .camera-top-bar {
+    padding: var(--retro24-space-md);
+  }
+
+  .camera-nav-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .camera-capture-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .camera-capture-inner {
+    width: 58px;
+    height: 58px;
+  }
+
+  .camera-bottom-bar {
+    padding: var(--retro24-space-2xl);
+  }
+}
+
+/* For larger devices */
+@media (min-width: 768px) {
+  .camera-capture-button {
+    width: 90px;
+    height: 90px;
+  }
+
+  .camera-capture-inner {
+    width: 74px;
+    height: 74px;
+  }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+  .camera-top-bar {
+    padding-left: max(var(--retro24-space-lg), env(safe-area-inset-left));
+    padding-right: max(var(--retro24-space-lg), env(safe-area-inset-right));
+  }
+
+  .camera-bottom-bar {
+    padding-left: max(var(--retro24-space-3xl), env(safe-area-inset-left));
+    padding-right: max(var(--retro24-space-3xl), env(safe-area-inset-right));
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .camera-nav-button,
+  .camera-capture-button,
+  .camera-capture-inner {
+    transition: none;
+  }
+
+  .camera-nav-button:hover,
+  .camera-nav-button:active,
+  .camera-capture-button:hover,
+  .camera-capture-button:active {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .camera-nav-button {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #FFFFFF;
+  }
+
+  .camera-capture-button {
+    border-width: 6px;
+  }
+
+  .camera-top-bar,
+  .camera-bottom-bar {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* ========================================
+   SAFE AREA SUPPORT - iOS Notch
+   ======================================== */
+
+/* Ensure content doesn't overlap with device notches/safe areas */
+@supports (padding: max(0px)) {
+  .camera-top-bar {
+    padding-top: max(var(--retro24-space-lg), env(safe-area-inset-top, var(--retro24-space-lg)));
+  }
+
+  .camera-bottom-bar {
+    padding-bottom: max(var(--retro24-space-3xl), env(safe-area-inset-bottom, var(--retro24-space-3xl)));
+  }
+}

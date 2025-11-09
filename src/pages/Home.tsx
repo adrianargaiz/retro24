@@ -24,8 +24,7 @@ const Home: React.FC = () => {
   };
 
   const handleCreateNewRoll = () => {
-    // TODO: Navigate to camera or create roll screen
-    console.log('Create new roll');
+    history.push('/camera');
   };
 
   const handleSeePastRolls = () => {
@@ -38,8 +37,7 @@ const Home: React.FC = () => {
   };
 
   const handleNavCamera = () => {
-    // TODO: Navigate to camera
-    console.log('Navigate to camera');
+    history.push('/camera');
   };
 
   const handleNavRolls = () => {
