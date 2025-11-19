@@ -121,54 +121,57 @@
 
 .login-input-wrapper {
   width: 100%;
-  margin-bottom: 16px; /* Explicit spacing between input fields */
+  margin-bottom: 16px; /* Espaciado entre inputs */
 }
 
 .login-input-wrapper:last-of-type {
-  margin-bottom: 0; /* Remove margin from last input wrapper */
+  margin-bottom: 0; /* Sin margen en el último input */
 }
 
 .login-input {
-  --background: rgba(44, 42, 43, 0.15); /* Lighter for better visibility */
-  --color: var(--retro24-text-primary);
-  --placeholder-color: rgba(44, 42, 43, 0.5);
+  --background: rgba(44, 42, 43, 0.15); /* 15% opacidad - estado normal */
+  --color: var(--retro24-text-primary); /* #2C2A2B */
+  --placeholder-color: rgba(44, 42, 43, 0.5); /* 50% opacidad */
   --placeholder-opacity: 1;
-  --padding-start: 20px;
+  --padding-start: 20px; /* Padding horizontal */
   --padding-end: 20px;
-  --padding-top: 0;
+  --padding-top: 0; /* Sin padding vertical */
   --padding-bottom: 0;
-  --border-radius: 16px; /* Ionic variable for border radius */
+  --border-radius: 16px;
 
   width: 339px; /* Ancho exacto según especificación */
   height: 59px; /* Alto exacto según especificación */
-  border-radius: 16px; /* Radio exacto según especificación */
-  font-family: var(--retro24-font-family);
-  font-size: var(--retro24-font-size-body);
-  font-weight: var(--retro24-font-weight-regular);
+  border-radius: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px; /* var(--retro24-font-size-body) */
+  font-weight: 400; /* regular */
   margin: 0;
-  border: 1px solid rgba(44, 42, 43, 0.3); /* Add visible border for clarity */
+  border: 1px solid rgba(44, 42, 43, 0.3); /* Borde normal: 1px al 30% */
 }
 
 /* Ensure the native input inside Shadow DOM has proper styling */
 .login-input::part(native) {
-  background: rgba(44, 42, 43, 0.15) !important; /* Match lighter background */
-  border: 1px solid rgba(44, 42, 43, 0.3) !important; /* Visible border */
+  background: rgba(44, 42, 43, 0.15) !important; /* 15% opacidad */
+  border: 1px solid rgba(44, 42, 43, 0.3) !important; /* Borde normal: 1px al 30% */
   border-radius: 16px;
-  padding: 0 20px;
+  padding: 0 20px; /* Padding horizontal */
   height: 59px;
   width: 339px;
-  color: var(--retro24-text-primary) !important;
+  color: var(--retro24-text-primary) !important; /* #2C2A2B */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-/* Focus state */
+/* Focus state - 20% opacidad, borde 2px al 50% */
 .login-input.ion-focused {
-  --background: rgba(44, 42, 43, 0.2);
-  border: 2px solid rgba(44, 42, 43, 0.5); /* Stronger border on focus */
+  --background: rgba(44, 42, 43, 0.2); /* 20% opacidad al hacer focus */
+  border: 2px solid rgba(44, 42, 43, 0.5); /* Borde focus: 2px al 50% */
 }
 
 .login-input.ion-focused::part(native) {
-  background: rgba(44, 42, 43, 0.2) !important;
-  border: 2px solid rgba(44, 42, 43, 0.5) !important;
+  background: rgba(44, 42, 43, 0.2) !important; /* 20% opacidad */
+  border: 2px solid rgba(44, 42, 43, 0.5) !important; /* Borde focus: 2px al 50% */
 }
 
 /* ========================================
@@ -345,6 +348,11 @@
     max-width: 320px;
   }
 
+  .login-input::part(native) {
+    width: 100% !important;
+    max-width: 320px;
+  }
+
   .login-rainbow-stripes {
     transform: translate(-50%, -50%) scale(0.9);
   }
@@ -359,6 +367,11 @@
   .login-input,
   .login-button {
     width: 100%;
+    max-width: 280px;
+  }
+
+  .login-input::part(native) {
+    width: 100% !important;
     max-width: 280px;
   }
 
@@ -418,12 +431,12 @@
 /* Alto contraste para mejor legibilidad */
 @media (prefers-contrast: high) {
   .login-input {
-    --background: rgba(44, 42, 43, 0.25);
-    border: 2px solid var(--retro24-text-primary);
+    --background: rgba(44, 42, 43, 0.25); /* 25% opacidad en alto contraste */
+    border: 2px solid #2C2A2B; /* Borde sólido en alto contraste */
   }
 
   .login-input::part(native) {
-    background: rgba(44, 42, 43, 0.25) !important;
-    border: 2px solid var(--retro24-text-primary) !important;
+    background: rgba(44, 42, 43, 0.25) !important; /* 25% opacidad */
+    border: 2px solid #2C2A2B !important; /* Borde sólido */
   }
 }

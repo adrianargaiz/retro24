@@ -40,7 +40,7 @@ const Login: React.FC = () => {
 
   const handleAppleLogin = () => {
     console.log('Apple login clicked');
-    // TODO: Implement Apple login
+    // TODO: Implement Apple OAuth login
   };
 
   return (
@@ -117,7 +117,7 @@ const Login: React.FC = () => {
                   type="button"
                   aria-label="Login with Google"
                 >
-                  <GoogleIcon width={36} height={36} />
+                  <GoogleIcon width={40} height={40} />
                 </button>
                 <button
                   className="login-social-button"
@@ -125,7 +125,7 @@ const Login: React.FC = () => {
                   type="button"
                   aria-label="Login with Apple"
                 >
-                  <AppleIcon width={38} height={38} />
+                  <AppleIcon width={40} height={40} />
                 </button>
               </div>
 
