@@ -116,7 +116,7 @@
 }
 
 /* ========================================
-   INPUT FIELDS - 339x59px, #2C2A2B 20% opacity, radius 16px
+   INPUT FIELDS - 339x59px, #2C2A2B with visible background, radius 16px
    ======================================== */
 
 .login-input-wrapper {
@@ -129,14 +129,15 @@
 }
 
 .login-input {
-  --background: rgba(44, 42, 43, 0.2); /* Fixed: Set actual background color instead of transparent */
+  --background: rgba(44, 42, 43, 0.15); /* Lighter for better visibility */
   --color: var(--retro24-text-primary);
-  --placeholder-color: rgba(44, 42, 43, 0.6);
+  --placeholder-color: rgba(44, 42, 43, 0.5);
   --placeholder-opacity: 1;
   --padding-start: 20px;
   --padding-end: 20px;
   --padding-top: 0;
   --padding-bottom: 0;
+  --border-radius: 16px; /* Ionic variable for border radius */
 
   width: 339px; /* Ancho exacto según especificación */
   height: 59px; /* Alto exacto según especificación */
@@ -145,13 +146,29 @@
   font-size: var(--retro24-font-size-body);
   font-weight: var(--retro24-font-weight-regular);
   margin: 0;
+  border: 1px solid rgba(44, 42, 43, 0.3); /* Add visible border for clarity */
 }
 
-/* Removed ::part(native) rules - Ionic CSS variables penetrate Shadow DOM automatically */
+/* Ensure the native input inside Shadow DOM has proper styling */
+.login-input::part(native) {
+  background: rgba(44, 42, 43, 0.15) !important; /* Match lighter background */
+  border: 1px solid rgba(44, 42, 43, 0.3) !important; /* Visible border */
+  border-radius: 16px;
+  padding: 0 20px;
+  height: 59px;
+  width: 339px;
+  color: var(--retro24-text-primary) !important;
+}
 
 /* Focus state */
 .login-input.ion-focused {
-  --background: rgba(44, 42, 43, 0.25);
+  --background: rgba(44, 42, 43, 0.2);
+  border: 2px solid rgba(44, 42, 43, 0.5); /* Stronger border on focus */
+}
+
+.login-input.ion-focused::part(native) {
+  background: rgba(44, 42, 43, 0.2) !important;
+  border: 2px solid rgba(44, 42, 43, 0.5) !important;
 }
 
 /* ========================================
@@ -214,7 +231,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 16px; /* Space between Google and Apple icons */
   margin-bottom: var(--retro24-space-md);
 }
 
@@ -401,11 +418,12 @@
 /* Alto contraste para mejor legibilidad */
 @media (prefers-contrast: high) {
   .login-input {
-    --background: rgba(44, 42, 43, 0.3);
+    --background: rgba(44, 42, 43, 0.25);
+    border: 2px solid var(--retro24-text-primary);
   }
 
   .login-input::part(native) {
-    background: rgba(44, 42, 43, 0.3);
-    border: 1px solid var(--retro24-text-primary);
+    background: rgba(44, 42, 43, 0.25) !important;
+    border: 2px solid var(--retro24-text-primary) !important;
   }
 }
